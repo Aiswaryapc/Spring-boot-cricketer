@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cricketer-info
+  labels:
+    app: cricketer-info
+spec:
+  selector:
+    matchLabels: 
+      app: cricketer-info
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: cricketer-info
+    spec:
+      containers:
+        - name: cricketer-info
+          image: cricketer-info:1.0
+          ports:
+            - containerPort: 8081
+ 
